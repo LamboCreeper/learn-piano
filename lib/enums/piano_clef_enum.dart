@@ -1,0 +1,4 @@
+enum PianoClef {
+  g,
+  f
+}
