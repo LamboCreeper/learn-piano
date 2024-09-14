@@ -31,8 +31,14 @@ class GameNotifier extends ChangeNotifier {
   }
 
   void _updateCurrentNote() {
+    PianoNotePitchClass previousNote = this._currentNote;
+
     this._currentNote = PianoNotePitchClass.values[this._random.nextInt(PianoNotePitchClass.values.length)];
     this._currentClef = PianoClef.values[this._random.nextInt(PianoClef.values.length)];
+
+    if (this._currentNote == previousNote) {
+      return this._updateCurrentNote();
+    }
 
     this.notifyListeners();
   }

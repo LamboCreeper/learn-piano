@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:learn_piano/constants.dart';
 
 import '../../../../enums/piano_note_pitch_class_enum.dart';
-import '../../../../main.dart';
 
 class BlackPianoNoteSpacer extends StatelessWidget {
   const BlackPianoNoteSpacer({ super.key });

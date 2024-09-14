@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learn_piano/constants.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +7,6 @@ import 'package:provider/provider.dart';
 import '../../../../enums/piano_clef_enum.dart';
 import '../../../../enums/piano_note_pitch_class_enum.dart';
 import '../../../../enums/piano_note_state_enum.dart';
-import '../../../../main.dart';
 import '../../../../notifiers/game_notifier.dart';
 
 class WhitePianoNoteKey extends StatefulWidget {

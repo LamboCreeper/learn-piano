@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
     ]);
 
     return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Learn Piano',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorSchemeSeed: Colors.blue,

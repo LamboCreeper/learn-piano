@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,8 +17,9 @@ class HomePage extends StatelessWidget {
                   builder: (ctx, game, child) {
                     return Column(
                       children: [
-                        Align(
+                        Container(
                           alignment: Alignment.center,
+                          margin: const EdgeInsets.only(top: 10),
                           child: Text("Streak: ${game.getStreak()}")
                         ),
                         PianoStave(
@@ -36,3 +36,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+

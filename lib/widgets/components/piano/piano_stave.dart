@@ -5,13 +5,13 @@ import '../../../enums/piano_note_pitch_class_enum.dart';
 import 'notes/piano_note.dart';
 
 class PianoStave extends StatelessWidget {
-  static const _gClefAsset = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/GClef.svg/60px-GClef.svg.png";
-  static const _fClefAsset = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/FClef.svg/60px-FClef.svg.png";
+  static const _gClefAsset = "./assets/g-clef.png";
+  static const _fClefAsset = "./assets/f-clef.png";
 
   final PianoClef _clef;
   final PianoNotePitchClass? _note;
 
-  const PianoStave(this._clef, [this._note = null]);
+  const PianoStave(this._clef, [this._note]);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class PianoStave extends StatelessWidget {
               left: _clef == PianoClef.g ? 0 : 17.5,
               width: _clef == PianoClef.g ? 65 : 32.5,
               height: _clef == PianoClef.g ? 65 : 32.5,
-              child: Image.network(_clef == PianoClef.g ? PianoStave._gClefAsset : PianoStave._fClefAsset)
+              child: Image(image: AssetImage(_clef == PianoClef.g ? PianoStave._gClefAsset : PianoStave._fClefAsset))
           ),
           this._note != null ? PianoNote(this._clef, this._note) : const SizedBox(),
           Column(
@@ -34,12 +34,12 @@ class PianoStave extends StatelessWidget {
                 Align(
                     alignment: Alignment.center,
                     child: Container(
-                        width: 20,
+                        width: 15,
                         height: 10,
                         decoration: BoxDecoration(
                             border: Border(
                                 top: BorderSide(
-                                    color: showTopCLine ? Colors.black : Colors.white
+                                    color: showTopCLine ? Colors.black : Colors.transparent
                                 )
                             )
                         )
@@ -59,17 +59,18 @@ class PianoStave extends StatelessWidget {
                 Align(
                     alignment: Alignment.center,
                     child: Container(
-                        width: 20,
+                        width: 15,
                         height: 10,
                         decoration: BoxDecoration(
                             border: Border(
                                 top: BorderSide(
-                                    color: showBottomCLine ? Colors.black : Colors.white
+                                    color: showBottomCLine ? Colors.black : Colors.transparent
                                 )
                             )
                         )
                     )
-                )
+                ),
+                const SizedBox(height: 10),
               ]
           )
         ]
